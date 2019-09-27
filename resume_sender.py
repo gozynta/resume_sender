@@ -27,16 +27,16 @@ def main(fullname: str, email: str, resume_path: str):
     applicant_id = submit_applicant(fullname, email)
     # click.echo(applicant_id)
 
-    hash = upload_resume(applicant_id, resume_path)
-    click.echo('Resume uploaded successfully, thank you for your application. sha256:{}'.format(hash))
+    sha256hash = upload_resume(applicant_id, resume_path)
+    click.echo('Resume uploaded successfully, thank you for your application. sha256:{}'.format(sha256hash))
 
 
 def submit_applicant(fullname: str, email: str) -> str:
     """
     Submit applicant's name and email, and get the resultant applicant_id.
 
-    :param fullname:
-    :param email:
+    :param fullname: Full name of candidate
+    :param email: Email address of candidate
     :return: applicant id - to be used as filename for the upload step.
     """
     data = dict(
@@ -63,8 +63,8 @@ def upload_resume(applicant_id, resume_path, content_type=None):
 
     :param applicant_id: From submit_application()
     :param resume_path: Path to resume file that you want to submit.
-    :param content_type: Optional - content type of the resume file.
-    :return:
+    :param content_type: Optional - content type of the resume file (otherwise guessed from filename).
+    :return: the sha256 hash of the uploaded file
     """
     blocksize = 8 * 1024  # Read large files in 8k blocks
 
