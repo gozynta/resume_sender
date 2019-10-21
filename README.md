@@ -3,6 +3,8 @@
 
 To apply for a software engineering position at [Gozynta](https://www.gozynta.com), please submit your resume using this
  application.
+ 
+ Note: some job listing sites have copied our listing, but have it incorrectly listed as 'worldwide'.  **We're currently only accepting US candidates.**  Please review our listings on [Stack Overflow](https://stackoverflow.com/jobs/companies/gozynta) for the current version.
 
 ## Usage
 * Clone this repo
